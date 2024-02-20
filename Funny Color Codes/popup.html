@@ -1,0 +1,52 @@
+<!-- popup.html -->
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Funny Quote Gen</title>
+    <style>
+        body {
+            transition: background-color 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Simple Funny Quote Generator</h1>
+
+    <div id="quoteDisplay">
+        <!-- Quotes will display here! -->
+    </div>
+
+    <button onclick="newQuote()">New Quote</button>
+
+    <script>
+        var quotes = [
+            'Do not take life too seriously. You will never get out of \it alive. - Elbert Hubbard',
+            'May the forces of evil become confused on the way to your house. - George Carlin',
+            'Laziness \is nothing more than the habit of resting before you get tired. - Jules Renard', 
+            'There can not be a crisis next week. My schedule \is already full. - Henry Kissinger',
+            'My life needs editing. - Mort Sahl',
+            'I always wanted to be somebody, but now \I realize \I should have been more specific. - Lily Tomin',
+            'If at first you don\'t succeed, find out \if the loser gets anything. - William Lyon Phelps',
+            'You\'re only as good as your last haircut. - Fran Lebowitz'
+        ];
+
+        function newQuote() {
+            var randomNumber = Math.floor(Math.random() * (quotes.length));
+            document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
+
+            // Generate a random color
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+
+            // Change the background color
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</body>
+
+</html>
