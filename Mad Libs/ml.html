@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mad Libs Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        color: #333;
+        text-shadow: 2px 2px #ccc;
+      }
+
+      button {
+        font-size: 1.2em;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      #story {
+        font-size: 1.2em;
+        margin-top: 30px;
+        text-align: center;
+        max-width: 600px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Mad Libs Game</h1>
+      <button onclick="playGame()">Play Game</button>
+      <p id="story"></p>
+    </div>
+
+    <script>
+      function playGame() {
+        // Prompt the user for different types of words
+        const noun1 = prompt("Enter a noun:");
+        const verb = prompt("Enter a verb:");
+        const adjective = prompt("Enter an adjective:");
+        const noun2 = prompt("Enter another noun:");
+
+        // Validate the user's inputs
+        if (!noun1 || !verb || !adjective || !noun2) {
+          alert("Please enter all the required words.");
+          return;
+        }
+
+        // Create the story with the user's inputs
+        const story = `Once upon a time, there was a ${noun1} who loved to ${verb} in the forest. One day, he saw a ${adjective} ${noun2} and decided to chase it.`;
+
+        // Display the final story
+        document.getElementById("story").innerText = story;
+      }
+    </script>
+  </body>
+</html>
